@@ -117,18 +117,6 @@ points:
               bind: [0.5, 0.5, 05, 24]
               tags:
                 high15: true
-        far:
-          key:
-            spread: kx
-            splay: -15
-            origin: [-0.5 kx, -0.9 ky]
-            column_net: P14
-            rotate: 90
-          rows:
-            thumb:
-              bind: [4, -2, 0.1, 0.1]
-              tags:
-                high15: true
       rows:
         thumb:
           row_net: P7
@@ -161,10 +149,6 @@ outlines:
       points:
         - ref: matrix_inner_bottom
           shift: [0.5 kx + 0.5px, -0 ky + 0.5 py]
-        - ref: thumbfan_far_thumb
-          shift: [0.75 kx + 0.5px, -0.55 ky - 0.5 py]
-        - ref: thumbfan_far_thumb
-          shift: [-0.75 kx - 0.5px, -0.55 ky - 0.5 py]
         - ref: thumbfan_near_thumb
           shift: [-0.5 kx + 0.5 px, -0.6 ky - 0.5 py]
         - ref: matrix_pinky_bottom
@@ -178,10 +162,6 @@ outlines:
           shift: [0.5 kx + 1px, -0.7 ky + 0.5 py]
         # - ref: thumbfan_home_thumb
         #   shift: [1 kx + 0.5px, -0.5 ky + 0.5 py]
-        - ref: thumbfan_far_thumb
-          shift: [0.75 kx + 0.5px, -0.55 ky - 0.5 py]
-        - ref: thumbfan_far_thumb
-          shift: [-0.75 kx - 0.5px, -0.55 ky - 0.5 py]
         - ref: thumbfan_near_thumb
           shift: [-0.5 kx + 0.5 px, -0.6 ky - 0.5 py]
         - ref: matrix_pinky_bottom
@@ -303,12 +283,6 @@ outlines:
       adjust:
         - ref: matrix_index_bottom
           shift: [0.45kx, -0.85 ky]
-      radius: 1.05
-    thumb:
-      what: circle
-      adjust:
-        - ref: thumbfan_far_thumb
-          shift: [0, 0.6 kx]
       radius: 1.05
   mounting_holes:
     $extends: outlines.screw_holes
@@ -1091,20 +1065,6 @@ pcbs:
           shift: [0,8.5]
         params:
           net: home_thumb
-      via_14_4:
-        what: simple_via
-        adjust:
-          ref: thumbfan_far_thumb
-          shift: [-2,3]
-        params:
-          net: P14
-      via_far_thumb:
-        what: simple_via
-        adjust:
-          ref: thumbfan_far_thumb
-          shift: [4,8.5]
-        params:
-          net: far_thumb
       via_18_5:
         what: simple_via
         adjust:
